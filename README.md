@@ -34,12 +34,14 @@ A docker container is merely a snapshot of the virtual environment.
 
 ### Dockerfile Method:
 
+#### Building/Creating a docker image
+
 > cd Docker  
 > sh build.sh 
 
 This will create a docker image called custom\_docker\_image. You can change the name of the docker image in build.sh. It has been already installed with the packages you mentioned in the dockerfile and misc/requirements.txt.
 
-#### Creating a container from the docker image
+#### Starting a container from the docker image
 
 > cd Docker  
 > sh run.sh
@@ -48,7 +50,7 @@ This will start an instance of the docker image(which means a docker container)
 
 ### Interactive method:
 
-In the interactive method, we work with already existing docker images so we don't have to build a docker image on the data factory. The run scripts given below pull the docker image from a public docker registry (here its nvidia ngc https://ngc.nvidia.com/catalog/containers/) and start a conatiner
+In the interactive method, we work with already existing docker images so we don't have to build/create a docker image on the data factory. The run scripts given below pull the docker image from a public docker registry (here its nvidia ngc https://ngc.nvidia.com/catalog/containers/) and start a conatiner
 
 > cd Docker 
 
@@ -58,8 +60,9 @@ tensorflow:
 pytorch
 > sh run\_interactive\_pytorch.sh 
 
+## Important
 
-Any chnages to the packages inside the docker container wont be persistent unless you commit the changes to your docker image. See https://docs.docker.com/engine/reference/commandline/commit/
+Any changes to the packages inside the docker container wont be persistent unless you commit the changes to your docker image. See https://docs.docker.com/engine/reference/commandline/commit/
 
-> docker ps
-> docker commit  <instance_name> <your_docker_image_name>
+> docker ps 
+> docker commit  <container_id> <your_docker_image_name> 
