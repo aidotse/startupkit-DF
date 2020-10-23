@@ -1,8 +1,11 @@
+<!--
  File              : README.md
  Author            : Sheetal Reddy <sheetal.reddy@ai.se>
  Date              : 23.10.2020
  Last Modified Date: 23.10.2020
  Last Modified By  : Sheetal Reddy <sheetal.reddy@ai.se>
+
+--!>
 # Startupkit-DF
 
 Startup kit for the data factory. We are providing a simplified cookbook to get you started as soon as possible.
