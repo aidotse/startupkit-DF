@@ -58,3 +58,8 @@ tensorflow:
 pytorch
 > sh run\_interactive\_pytorch.sh 
 
+
+Any chnages to the packages inside the docker container wont be persistent unless you commit the changes to your docker image. See https://docs.docker.com/engine/reference/commandline/commit/
+
+> docker ps
+> docker commit  <instance_name> <your_docker_image_name>
