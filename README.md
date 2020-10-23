@@ -62,7 +62,10 @@ pytorch
 
 ## Important
 
-Any changes to the packages inside the docker container wont be persistent unless you commit the changes to your docker image. See https://docs.docker.com/engine/reference/commandline/commit/
-
-> docker ps 
+Code changes will be persistent if you follow the above procedure but any changes to the packages inside the docker container wont be persistent unless you commit the changes to your docker image. See https://docs.docker.com/engine/reference/commandline/commit/
+ 
+Exit the docker container and run 
+ 
 > docker commit  <container_id> <your_docker_image_name> 
+
+
