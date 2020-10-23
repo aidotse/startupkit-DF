@@ -14,7 +14,7 @@ To get started with running jobs on the data factory,  you just need to know
 1. What is a docker image 
 2. What is a docker container
 3. How do we mount the folders from your workspace to your docker conatiner
-4. What are NGC docker containers
+4. What are NGC docker images
 
 
 Let's dive into the details then ! 
@@ -52,7 +52,7 @@ This will start an instance of the docker image(which means a docker container)
 
 ### Interactive method:
 
-In the interactive method, we work with already existing docker images so we don't have to build a docker image on the data factory. The run scripts given below pull the docker image from a public docker registry (here its nvidia ngc) and start a conatiner
+In the interactive method, we work with already existing docker images so we don't have to build a docker image on the data factory. The run scripts given below pull the docker image from a public docker registry (here its nvidia ngc https://ngc.nvidia.com/catalog/containers/) and start a conatiner
 
 > cd Docker 
 
@@ -62,7 +62,3 @@ tensorflow:
 pytorch
 > sh run\_interactive\_pytorch.sh 
 
-
-
-
-If you have any questions, Send a email to sheetal.reddy@ai.se or ping me on slack. 
