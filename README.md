@@ -45,7 +45,7 @@ This will create a docker image called custom\_docker\_image. You can change the
 
 #### Creating a container from the docker image
 
-> cd Docker 
+> cd Docker  
 > sh run.sh
 
 This will start an instance of the docker image(which means a docker container)
@@ -65,5 +65,4 @@ pytorch
 
 
 
-
-If you have any questions, Send a mail to sheetal.reddy@ai.se or ping me on slack. 
+If you have any questions, Send a email to sheetal.reddy@ai.se or ping me on slack. 
