@@ -19,7 +19,7 @@ To get started with running jobs on the data factory,  you just need to know
 
 Let's dive into the details then ! 
 
-### what is a docker image?
+### What is a docker image?
 
 If we have to grossly simplyfy what a docker image is, It's  like a lightweigt Virtual machine.
 
@@ -29,7 +29,7 @@ You can create a docker image in one of the two ways
 2. Dockerfile method : By constructing a plain-text file, known as a Dockerfile, which provides the specifications for creating a Docker image.
 
 
-### what is a docker container?
+### What is a docker container?
 
 A docker container is merely a snapshot of the virtual environment.  
 
@@ -38,14 +38,14 @@ A docker container is merely a snapshot of the virtual environment.
 
 ### Dockerfile Method:
 
-> cd Docker 
+> cd Docker  
 > sh build.sh 
 
 This will create a docker image called custom\_docker\_image. You can change the name of the docker image in build.sh. It has been already installed with the packages you mentioned in the dockerfile and misc/requirements.txt.
 
 #### Creating a container from the docker image
 
-> cd Docker
+> cd Docker 
 > sh run.sh
 
 This will start an instance of the docker image(which means a docker container)
