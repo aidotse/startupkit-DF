@@ -12,17 +12,24 @@ CODE_DIR=$ROOT_DIR/src
 export UID=$(id -u)
 export GID=$(id -g)
 
-grep $(whoami): /etc/passwd > passwd
-grep $(whoami): /etc/group > group
+username=$(whoami)
+
+
+grep "^${username}:" /etc/passwd > .passwd
+grep "^${username}:" /etc/group > .group
 
 nvidia-docker  run   \
 	--user $UID:$GID \
-	--volume="$(pwd)/group:/etc/group:ro" \
-	--volume="$(pwd)/passwd:/etc/passwd:ro" \
+	--volume="$(pwd)/.group:/etc/group:ro" \
+	--volume="$(pwd)/.passwd:/etc/passwd:ro" \
 	-v $DATA_DIR:/data \
 	-v $CODE_DIR:/src \
 	-it custom_docker_image \
-	bash 
+	bash
+
+rm .group
+rm .passwd
+
 
 
 
