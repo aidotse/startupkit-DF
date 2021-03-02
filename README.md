@@ -48,18 +48,6 @@ This will create a docker image called custom\_docker\_image. You can change the
 
 This will start an instance of the docker image(which means a docker container)
 
-### Interactive method:
-
-In the interactive method, we work with already existing docker images so we don't have to build/create a docker image on the data factory. The run scripts given below pull the docker image from a public docker registry (here its nvidia ngc https://ngc.nvidia.com/catalog/containers/) and start a conatiner
-
-> cd Docker 
-
-tensorflow:
-> sh run\_interactive\_tensorflow2.0.sh
-
-pytorch
-> sh run\_interactive\_pytorch.sh 
-
 ## Important
 
 Code changes will be persistent if you follow the above procedure but any changes to the packages inside the docker container wont be persistent unless you commit the changes to your docker image. See https://docs.docker.com/engine/reference/commandline/commit/
