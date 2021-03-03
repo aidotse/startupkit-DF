@@ -20,8 +20,8 @@ grep "^${username}:" /etc/group > .group.$$
 
 nvidia-docker  run   \
 	--user $UID:$GID \
-	--volume="$(pwd)/.group:/etc/group:ro" \
-	--volume="$(pwd)/.passwd:/etc/passwd:ro" \
+	--volume="$(pwd)/.group.$$:/etc/group:ro" \
+	--volume="$(pwd)/.passwd.$$:/etc/passwd:ro" \
 	-v $DATA_DIR:/data \
 	-v $CODE_DIR:/src \
 	-it custom_docker_image \
