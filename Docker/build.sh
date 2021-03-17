@@ -6,4 +6,5 @@
 # Last Modified By  : Sheetal Reddy <sheetal.reddy@ai.se>
 
 
-docker build -f Dockerfile -t custom_docker_image  ..
+docker build   --build-arg u_id=$(id -u) --build-arg g_id=$(id -g) --build-arg username=$(id -gn $USER)  -f Dockerfile -t custom_docker_image ..
+

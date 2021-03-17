@@ -9,6 +9,10 @@ FROM nvcr.io/nvidia/tensorflow:20.09-tf1-py3
 #for pytorch 
 #FROM nvcr.io/nvidia/pytorch:20.09-py3
 
+ARG u_id
+ARG g_id
+ARG username
+
 
 ENV TZ=Europe/Kiev
 RUN ln -snf /usr/share/zoneinfo/$TZ /etc/localtime && echo $TZ > /etc/timezone
@@ -40,9 +44,16 @@ RUN apt-get clean \
     && rm -rf /var/lib/apt/lists/*
 
 
-RUN mkdir -p /src
+RUN groupadd --gid ${g_id} ${username}
+RUN useradd --uid ${u_id} --gid ${g_id} --shell /bin/bash --create-home ${username}
+USER ${username}
+RUN chown -R ${u_id}:${g_id} /home/${username}
+RUN chmod -R  755 /home/${username}
 
-WORKDIR /src/
+
+WORKDIR /home/${username}
+
+
 
 # publish port
 #EXPOSE 5656
