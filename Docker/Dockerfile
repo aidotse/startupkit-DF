@@ -51,6 +51,20 @@ RUN chown -R ${u_id}:${g_id} /home/${username}
 RUN chmod -R  755 /home/${username}
 
 
+
+# Add these commands if you work with conda
+ENV SHELL=/bin/bash
+RUN wget https://repo.anaconda.com/miniconda/Miniconda3-latest-Linux-x86_64.sh
+RUN bash Miniconda3-latest-Linux-x86_64.sh -b
+RUN rm -f Miniconda3-latest-Linux-x86_64.sh
+ENV PATH="/home/${username}/miniconda3/bin:${PATH}"
+ARG PATH="/home/${username}/miniconda3/bin:${PATH}"
+RUN conda init bash
+
+RUN conda create -n env  -y
+SHELL ["conda", "run", "-n", "env", "/bin/bash", "-c"]
+RUN conda install -n env -c pytorch pytorch=1.8.0 
+
 WORKDIR /home/${username}
 
 
