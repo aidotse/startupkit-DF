@@ -14,12 +14,12 @@ export GID=$(id -g)
 
 username=$(whoami)
 
-
 grep "^${username}:" /etc/passwd > .passwd.$$
 grep "^${username}:" /etc/group > .group.$$
 
 nvidia-docker  run   \
 	--name mycontainer \
+	--gpus 1,2 \
 	--user $UID:$GID \
 	--volume="$(pwd)/.group.$$:/etc/group:ro" \
 	--volume="$(pwd)/.passwd.$$:/etc/passwd:ro" \
@@ -27,9 +27,6 @@ nvidia-docker  run   \
 	-v $CODE_DIR:/home/$username/src \
 	-it custom_docker_image \
 	bash
-
-
-
 
 rm .passwd.$$
 rm .group.$$
