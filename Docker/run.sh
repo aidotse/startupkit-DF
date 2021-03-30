@@ -19,7 +19,8 @@ grep "^${username}:" /etc/group > .group.$$
 
 nvidia-docker  run   \
 	--name mycontainer \
-	--gpus 1,2 \
+	-e CUDA_VISIBLE_DEVICES=4,5,6,7
+        -e CUDA_DEVICE_ORDER=PCI_BUS_ID
 	--user $UID:$GID \
 	--volume="$(pwd)/.group.$$:/etc/group:ro" \
 	--volume="$(pwd)/.passwd.$$:/etc/passwd:ro" \
