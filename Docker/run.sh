@@ -23,7 +23,6 @@ nvidia-docker  run   \
 	--user $UID:$GID \
 	--volume="$(pwd)/.group.$$:/etc/group:ro" \
 	--volume="$(pwd)/.passwd.$$:/etc/passwd:ro" \
-	--network="host" \
 	-v $DATA_DIR:/home/$username/data \
 	-v $CODE_DIR:/home/$username/src \
 	-it custom_docker_image \
