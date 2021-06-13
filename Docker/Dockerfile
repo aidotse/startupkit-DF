@@ -7,7 +7,7 @@ FROM nvcr.io/nvidia/tensorflow:20.09-tf1-py3
 #FROM nvcr.io/nvidia/tensorflow:20.09-tf2-py3
 
 #for pytorch 
-#FROM nvcr.io/nvidia/pytorch:20.09-py3
+#FROM nvcr.io/nvidia/pytorch:21.05-py3
 
 ARG u_id
 ARG g_id
