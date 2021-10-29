@@ -1,4 +1,6 @@
 
+These instruction and scripts have been deprecated. Consider the [examples](../examples/README.md) instead.  
+
 # Startupkit-DF
 
 Startup kit for the data factory. We are providing a simplified cookbook to get you started as soon as possible.
