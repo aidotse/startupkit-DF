@@ -1,0 +1,11 @@
+# number of classes
+nc: 3
+
+# class names
+names: [ 'adult', 'chick', 'egg']
+
+train: /data/train/all.txt
+val: /data/test/all.txt
+
+##train: /home/data/client1/train/images/
+##val: /home/data/client1/test/images/ 
