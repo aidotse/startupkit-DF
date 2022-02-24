@@ -1,4 +1,6 @@
 
+:warning: This instructions are deprecated. The DGX is now accessed via [AiQu](../aiqu/README.md).
+
 # Bare-metal: routines and way of working
 No explicit root privileges are given to users. Instead case studies and projects are implemented within Docker images which are build and run on the server. Running Docker is however a privileges equivalent to root, and thus users must adhere to special care and responsibility. 
 
